@@ -21,4 +21,9 @@ int numDay = InputInt("Введите день недели");
 {
     System.Console.WriteLine("Рабочий день");
 }
+    if (numDay > 7 || numDay < 1)
+{
+    System.Console.WriteLine("Такого дня недели не существует");
+}
+        
     
