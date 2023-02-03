@@ -3,7 +3,7 @@
 // 14212 -> нет
 // 12821 -> да
 // 23432 -> да
-System.Console.WriteLine("Ведите число");
+System.Console.WriteLine("Введите число");
 string number = Console.ReadLine();
 int len = number.Length;
 if (len == 5)
