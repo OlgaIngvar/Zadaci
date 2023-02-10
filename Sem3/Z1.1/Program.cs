@@ -23,13 +23,13 @@ int number = InputInt("Введите число: ");
 int reverse = reverseDigits(number);
 if (number == reverse)
 {
-    System.Console.WriteLine("Полиндром");
+    System.Console.WriteLine("Палиндром");
 }
 else
 {
-    System.Console.WriteLine("Не полиндром");
+    System.Console.WriteLine("Не палиндром");
 }
-else
+if(number > 9999 && number < 10000)
 {
     System.Console.WriteLine("Число не пятизначное");
 }

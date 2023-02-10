@@ -2,59 +2,11 @@
 0, 7, 8, -2, -2 -> 2
 1, -7, 567, 89, 223-> 3*/
 
-Console.Write("Введите цифры. !через запятую: ");
-int[] numbers = StringToNum(Console.ReadLine());
-PrintArray(numbers);
-int sum = 0;
-for (int i = 0; i < numbers.Length; i++)
+int Prompt(string message)
 {
-    if (numbers[i] > 0)
-    {
-        sum++;
-    }
+    Console.Write($"message");
+    return Convert.ToInt32(Console.ReadLine());
 }
-Console.WriteLine();
-Console.WriteLine($"количество цифр больше 0 = {sum}");
-
-
-int[] StringToNum(string input)
-{
-    int count = 1;
-    for (int i = 0; i < input.Length; i++)
-    {
-        if (input[i] == ",")
-        {
-            count++; 
-        }
-    }
-
-    int[] numbers = new int [count];
-    int a = 0;
-
-    for (int i = 0; i < input.Length; i++)
-    {
-        string temp = "";
-
-        while (input [i] != ",")
-        {
-        if(i != input.Length - 1)
-        {
-            temp += input [i].ToString();
-            i++;
-        }
-        else
-        {
-            temp += input [i].ToString();
-            break;
-        }
-        }
-        numbers[a] = Convert.ToInt32(temp);
-        a++;
-    }
-    return numbers;
-}
-
-
 void PrintArray(int[] array)
 {
     Console.Write("[ ");
@@ -64,3 +16,33 @@ void PrintArray(int[] array)
     }
     Console.Write("]");
 }
+int[] FillArray(int numbers)//ввод с клавиатуры
+{
+    int[] array = new int[numbers];
+    for (int i = 0; i < numbers; i++)
+    {
+        array[i] = Prompt("Введите число");
+    }
+    return array;
+}
+int CountPositiveNumbers(int[] array) // кол-во полож чисел
+{
+    int count = 0;
+    foreach(int part in array){
+        if(part > 0) count++;
+    }
+    return count;
+}
+int numbers = Prompt("Задайте, сколько чисел будет введено: ");
+if (numbers < 1)
+{
+    System.Console.WriteLine($"Введено некорректное число {numbers}");
+}
+else
+{
+    int[] array = FillArray(numbers);
+    System.Console.Write($"Введены числа: ");
+    PrintArray(array);
+    System.Console.WriteLine($"Чисел больше нуля: {CountPositiveNumbers(array)}");
+}
+

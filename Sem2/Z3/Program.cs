@@ -7,13 +7,12 @@
 int InputInt(string message)
 {
     System.Console.WriteLine(message + " > ");
-    string? inputValue = Console.ReadLine();
+    string inputValue = Console.ReadLine();
     int result = Convert.ToInt32(inputValue);
     return result;
 }
 int numDay = InputInt("Введите день недели");
-
-    if (numDay == 7 || numDay == 6)
+     if (numDay == 7 || numDay == 6)
 {
     System.Console.WriteLine("Выходной");
 }

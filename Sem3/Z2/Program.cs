@@ -5,7 +5,7 @@
 
 int Prompt(string message)
 {
-    Console.Write($"message");
+    Console.Write($"{message} : ");
     return Convert.ToInt32(Console.ReadLine());
 }
 int x1 = Prompt("Введите координату x первой точки");
